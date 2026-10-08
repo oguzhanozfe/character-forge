@@ -1,0 +1,40 @@
+name: tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  pytest:
+    name: pytest (${{ matrix.os }}, py${{ matrix.python }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python: ["3.10", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Install
+        run: python -m pip install -e ".[dev]"
+      - name: Tests (no GPU, no Blender, no downloads; Blender tests are skipped)
+        run: python -m pytest -q -rs
+      - name: Fake-mode CLI smoke run
+        shell: bash
+        run: |
+          forge --version
+          forge init-project "$RUNNER_TEMP/proj"
+          cd "$RUNNER_TEMP/proj"
+          forge new ci-demo --brief "CI smoke zombie" --mode fake --review-policy agent
+          for i in $(seq 1 12); do
+            set +e; forge run ci-demo; code=$?; set -e
+            [ $code -eq 0 ] && break
+            [ $code -ne 3 ] && exit $code
+            stage=$(forge status ci-demo | awk '$2=="awaiting-approval" && !s {print $1; s=1}')
+            forge approve ci-demo --stage "$stage" --by agent --note "CI smoke approval"
+          done
+          forge status ci-demo
+          test -f packages/ci-demo/character.manifest.json
