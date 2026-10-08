@@ -1,0 +1,94 @@
+# ---------------------------------------------------------------- Python / tooling
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.scratch/
+.coverage
+
+# ---------------------------------------------------------------- per-machine configuration (tool paths)
+config/machine.json
+
+# ---------------------------------------------------------------- character workspaces
+# Only small human-readable records may be committed: character.json, brief.md, approvals.json, gates/*.json|csv.
+# Stage runs, references, renders, meshes, rigs, motions and logs are local intermediates.
+characters/*/stages/
+characters/*/reference/
+characters/*/motions/
+characters/*/gates/*.png
+characters/*/gates/*.log
+# Final packages are produced locally and copied into a game project by the user; never committed here.
+packages/
+# Motion libraries can contain licensed clips; keep them outside git unless you own them.
+motion-library/
+
+# ---------------------------------------------------------------- intermediates, anywhere
+*.blend
+*.blend1
+*.blend2
+*.glb
+*.gltf
+*.ply
+*.npz
+*.npy
+*.bvh
+*.obj
+*.mtl
+*.fbx
+*.abc
+*.usd
+*.usda
+*.usdc
+*.exr
+*.psd
+*.spp
+*.ztl
+*.mp4
+*.webm
+# model weights / checkpoints
+*.safetensors
+*.ckpt
+*.gguf
+*.pt
+*.pth
+*.onnx
+*.bin
+models/
+weights/
+checkpoints/
+# renders and review images
+**/renders/
+contact-sheet*.png
+*-sheet.png
+preview.png
+fake-front.png
+*.log
+
+# ---------------------------------------------------------------- Unity sample project
+unity/SampleProject/[Ll]ibrary/
+unity/SampleProject/[Tt]emp/
+unity/SampleProject/[Ll]ogs/
+unity/SampleProject/[Oo]bj/
+unity/SampleProject/[Bb]uild/
+unity/SampleProject/[Bb]uilds/
+unity/SampleProject/UserSettings/
+unity/SampleProject/MemoryCaptures/
+unity/SampleProject/*.csproj
+unity/SampleProject/*.sln
+unity/SampleProject/.vs/
+unity/SampleProject/.idea/
+unity/SampleProject/Assets/CharacterForge/
+unity/SampleProject/Assets/CharacterForge.meta
+unity/SampleProject/Assets/Characters/
+unity/SampleProject/Assets/Characters.meta
+unity/SampleProject/Packages/packages-lock.json
+
+# ---------------------------------------------------------------- OS / editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

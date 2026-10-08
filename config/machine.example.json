@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "blender": "C:/AI/Blender/blender-4.5.14-windows-x64/blender.exe",
+  "blender_threads": 4,
+  "unity": "C:/Program Files/Unity/Hub/Editor/6000.3.25f1/Editor/Unity.exe",
+  "unity_project": "unity/SampleProject",
+  "kimodo_python": "C:/Users/<you>/AI-Animation/kimodo/.venv/Scripts/python.exe",
+  "kimodo_root": "C:/Users/<you>/AI-Animation/kimodo",
+  "kimodo_model": "Kimodo-SOMA-RP-v1.1",
+  "kimodo_text_encoder_device": "cpu",
+  "lock_root": "",
+  "motion_libraries": ["motion-library"],
+  "roster_dirs": [],
+  "default_mode": "fake",
+  "reconstruct": {
+    "default_backend": "pixal3d",
+    "backends": {
+      "pixal3d": {"vars": {"trellis_cli": "C:/AI/TRELLIS2/cuda12/trellis-cli.exe", "models": "C:/AI/TRELLIS2/models"}},
+      "trellis2": {"vars": {"trellis_cli": "C:/AI/TRELLIS2/cuda12/trellis-cli.exe", "models": "C:/AI/TRELLIS2/models"}},
+      "hunyuan3d": {"vars": {"url": "http://127.0.0.1:8081"}}
+    }
+  },
+  "_comment": "Example only. `forge setup` writes config/machine.json (git-ignored); keys you omit fall back to the built-in defaults (command templates live in character_forge/config.py). Set lock_root to another tool's lock folder (e.g. C:/BBFPS/.local/locks) to share one GPU queue with it."
+}

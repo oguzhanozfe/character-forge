@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "character-forge"
+version = "0.1.0"
+description = "Gated, resumable reference-to-game-character pipeline driven by an AI agent or a human: reconstruct, prepare, rig, screen, import, animate in context and package final forms."
+readme = "README.md"
+requires-python = ">=3.10"
+# Runtime is deliberately stdlib-only so the pipeline, its gates and fake mode run anywhere.
+# Blender, reconstruction models, Kimodo and Unity are external tools configured by `forge setup`.
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+forge = "character_forge.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["character_forge*"]
+
+[tool.setuptools.package-data]
+character_forge = ["data/*.json", "data/*.md", "data/presets/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+markers = [
+    "blender: needs a real Blender executable (set FORGE_TEST_BLENDER)",
+]
