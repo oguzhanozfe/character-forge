@@ -114,7 +114,7 @@ Unity package (`unity/com.characterforge.core`) to import the package and review
 | `characters/` | per-character workspaces (only small text records are committable) |
 | `packages/` | packaged final forms (ignored; copy into your game) |
 | `tests/` | pytest suite (synthetic fixtures generated at test time) |
-| `docs/` | [PIPELINE](docs/PIPELINE.md), [GATES](docs/GATES.md), [MOTION](docs/MOTION.md), [ADAPTERS](docs/ADAPTERS.md), [UNITY](docs/UNITY.md) |
+| `docs/` | [PIPELINE](docs/PIPELINE.md), [GATES](docs/GATES.md), [MOTION](docs/MOTION.md), [ADAPTERS](docs/ADAPTERS.md), [UNITY](docs/UNITY.md), [EXTENDING](docs/EXTENDING.md) |
 
 ## Status (v0.1)
 
