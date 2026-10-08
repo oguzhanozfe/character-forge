@@ -1,0 +1,63 @@
+{
+  "name": "humanoid",
+  "description": "Generic clothed adult humanoid (NPC, survivor, soldier). Unity Humanoid minimum plus fingers recommended; hitboxes on, gore off. Numbers are PROPOSALS.",
+  "kind": "humanoid",
+  "default_height_m": 1.75,
+  "require_all_human_bones": false,
+  "require_fingers": false,
+  "helper_bones": ["LeftForearmTwist", "RightForearmTwist"],
+  "approvals": ["reference", "preflight", "pose-screen", "motion-screen"],
+  "budgets": {"triangles_lod0": 50000, "max_materials": 3, "texture_size": 2048, "max_package_mb": 300},
+  "hit_regions": {
+    "Head": {"bones": ["Head"]},
+    "Chest": {"bones": ["UpperChest", "Chest", "Spine"]},
+    "Pelvis": {"bones": ["Hips"]},
+    "LeftArm": {"bones": ["LeftUpperArm", "LeftLowerArm", "LeftForearmTwist"]},
+    "RightArm": {"bones": ["RightUpperArm", "RightLowerArm", "RightForearmTwist"]},
+    "LeftLeg": {"bones": ["LeftUpperLeg", "LeftLowerLeg"]},
+    "RightLeg": {"bones": ["RightUpperLeg", "RightLowerLeg"]}
+  },
+  "gore_regions": {},
+  "thresholds": {
+    "individuality_iou_warn": 0.95,
+    "individuality_iou_fail": 0.985,
+    "height_tolerance_fraction": 0.02,
+    "debris_vertex_fraction": 0.005,
+    "debris_size_fraction": 0.03,
+    "nonmanifold_edges_warn": 0,
+    "degenerate_triangles_warn": 0,
+    "head_subpixel_triangles_warn": 0,
+    "head_subpixel_triangles_fail": 500,
+    "head_to_body_density_min": 1.2,
+    "tiny_uv_islands_warn": 0,
+    "max_influences": 4,
+    "weight_sum_tolerance": 0.0001,
+    "roundtrip_drift_m": 0.0001,
+    "distal_digits_expected": 4,
+    "stretch_red_flag": 3.0,
+    "stretch_edges_fail": 100,
+    "stretch_max_ratio_fail": 8.0,
+    "cross_influence_fraction_warn": 0.005,
+    "seam_gap_growth_warn_m": 0.01,
+    "motion_floor_penetration_m": 0.03,
+    "motion_floating_m": 0.06,
+    "motion_loop_seam_m": 0.02
+  },
+  "motion_profiles": {
+    "pilot": {"Idle": 1, "Walk": 1, "Run": 1},
+    "full": {"Idle": 3, "Walk": 2, "Run": 2, "Death": 1}
+  },
+  "default_motion_profile": "pilot",
+  "motion_prompts": {
+    "Idle": "A person stands relaxed in place, shifting weight gently from foot to foot with arms at the sides.",
+    "Walk": "A person walks forward at a steady relaxed pace in a straight line, arms swinging naturally.",
+    "Run": "A person jogs forward in a straight line at a steady pace with relaxed arms.",
+    "Death": "A person standing upright collapses to the ground and lies still."
+  },
+  "motion_seconds": {"Idle": 6, "Walk": 6, "Run": 5, "Death": 5},
+  "reference_guidance": [
+    "Original fictional adult only: no real-person likeness, celebrity, brand or franchise noun.",
+    "Full-body neutral A-pose with hands away from the thighs, plain background, even lighting.",
+    "Consistent clothing across views; separate matching portrait for the face."
+  ]
+}
