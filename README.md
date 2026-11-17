@@ -125,4 +125,4 @@ Unity package (`unity/com.characterforge.core`) to import the package and review
   your GPU/tools); Unity EditMode tests run inside Unity, not in CI.
 * Thresholds are proposals to calibrate on your own accepted characters. Gates detect risk; they do not approve looks.
 
-The repository is private; no open-source licence is granted unless the owner adds one.
+Code is MIT-licensed (see [LICENSE](LICENSE)). Third-party tools, checkpoints and their outputs keep their own terms; see [LICENSE-NOTES.md](LICENSE-NOTES.md).
