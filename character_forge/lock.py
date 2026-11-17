@@ -1,6 +1,6 @@
 """Machine-wide named locks for a single-GPU queue (and other exclusive slots such as a Unity batch slot).
 
-Port of BBFPS `shared_lock.py` with the safety changes its research review asked for:
+Shared lock with these safety rules:
   * owner identity = owner name + host + pid; a renewable lease via heartbeats;
   * a stale heartbeat alone never steals a lock whose process is still alive on this host;
   * timeouts are non-destructive: the waiter gives up, the holder is never stopped or deleted.

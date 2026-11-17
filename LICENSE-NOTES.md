@@ -3,7 +3,7 @@
 **character-forge contains no third-party models, weights, generators, store assets or motion libraries.** It only
 calls tools that *you* install and configure (`forge setup`). Each tool, checkpoint, auxiliary model, input image and
 output has its own terms. MIT/Apache on a code repository does **not** clear a checkpoint, a base model or the
-outputs. The notes below summarise terms as researched on 2026-10-09 (labelled SEARCHED in the source research); they
+outputs. The notes below summarise terms as researched on 2026-10-09; they
 are not legal advice and may have changed. Verify before installing, and again before shipping anything.
 
 | Tool | What forge uses it for | Terms to check (as researched) | Shipping risk |

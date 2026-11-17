@@ -22,7 +22,7 @@ characters/*/motions/
 characters/*/gates/*.png
 characters/*/gates/*.log
 # Final packages are produced locally and copied into a game project by the user; never committed here.
-packages/
+/packages/
 # Motion libraries can contain licensed clips; keep them outside git unless you own them.
 motion-library/
 

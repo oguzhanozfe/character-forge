@@ -20,5 +20,5 @@
       "hunyuan3d": {"vars": {"url": "http://127.0.0.1:8081"}}
     }
   },
-  "_comment": "Example only. `forge setup` writes config/machine.json (git-ignored); keys you omit fall back to the built-in defaults (command templates live in character_forge/config.py). Set lock_root to another tool's lock folder (e.g. C:/BBFPS/.local/locks) to share one GPU queue with it."
+  "_comment": "Example only. `forge setup` writes config/machine.json (git-ignored); keys you omit fall back to the built-in defaults (command templates live in character_forge/config.py). Set lock_root to another tool's lock folder (e.g. D:/shared/locks) to share one GPU queue with it."
 }

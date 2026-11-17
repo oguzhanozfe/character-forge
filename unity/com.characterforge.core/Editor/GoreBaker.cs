@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace CharacterForge.Editor
 {
-    // Generalized port of the BBFPS dismemberment baker: for each gore part, the skinned triangles dominated (>= 50 %
+    // Dismemberment baker: for each gore part, the skinned triangles dominated (>= 50 %
     // weight) by the cut bone's subtree become a loose limb mesh in that bone's space; the cut boundary becomes a cap on
     // the limb (gib) and a reversed stump cap in the parent bone's space. Bind pose only; the saved body is not changed.
     public static class GoreBaker

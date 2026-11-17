@@ -5,7 +5,7 @@
   "description": "Import character-forge packages: Humanoid Avatar from the manifest, materials, regional hitboxes, gore regions (gib/stump meshes), a shared motion library with an Animator controller, a turntable/motion preview and EditMode validation tests.",
   "unity": "2022.3",
   "keywords": ["character", "humanoid", "pipeline", "hitbox", "gore", "animation"],
-  "author": { "name": "character-forge" },
+  "author": { "name": "Oguzhan Ozdemir", "url": "https://github.com/oguzhanozfe/character-forge" },
   "dependencies": {
     "com.unity.modules.animation": "1.0.0",
     "com.unity.modules.physics": "1.0.0",

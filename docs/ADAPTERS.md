@@ -37,7 +37,7 @@ All renders are Cycles **CPU** with few samples so review never competes with GP
 
 ## Locks
 
-`forge lock acquire gpu --owner me` / `release` / `heartbeat` / `status`. Lock folders are compatible with the original
-`shared_lock.py` layout (`<root>/<name>.lock/owner.json`), so pointing `lock_root` at another tool's lock folder shares
+`forge lock acquire gpu --owner me` / `release` / `heartbeat` / `status`. Lock folders use a plain layout
+(`<root>/<name>.lock/owner.json`), so pointing `lock_root` at another tool's lock folder shares
 one GPU queue. A lock is reclaimed only when its holder process is gone (same host) or its heartbeat is older than the
 lease on another host; a stale heartbeat never steals a live process's lock; timeouts never stop anything.

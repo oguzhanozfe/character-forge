@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "com.characterforge.core": "file:../../com.characterforge.core"
+  }
+}

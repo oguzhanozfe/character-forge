@@ -67,7 +67,7 @@ def nearest_bone_weights(obj, rig, vertex_ids):
 
 
 def tpose_bind(rig, body):
-    """Re-bind in T-pose for a clean Unity Humanoid Avatar (port of BBFPS export_humanoid_bind): pose the arm chains
+    """Re-bind in T-pose for a clean Unity Humanoid Avatar: pose the arm chains
     straight along +/-X, bake that deformation into the mesh, commit the pose as the new rest and re-bind."""
     bpy.context.view_layer.objects.active = rig
     for side, sign in (("Left", 1.0), ("Right", -1.0)):

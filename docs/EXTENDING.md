@@ -1,8 +1,7 @@
-# Extending: new stages, adapters and gates (drop-in points for "pipeline v2")
+# Extending: new stages, adapters and gates
 
-The BBFPS "zombie pipeline v2" work (parameterized headless Blender prep, region-restricted weights with an optional
-SkinTokens adapter, earlier gates, material-library texturing) is designed to port into these interfaces. Its port
-note, once written, lives at `C:/BBFPS/.local/receipts/pipeline-v2-for-character-forge.md` on the owner's machine.
+Planned extensions (parameterized headless Blender prep, region-restricted weights with an optional SkinTokens
+adapter, earlier gates, material-library texturing) are meant to plug into the interfaces below.
 
 ## A new stage
 

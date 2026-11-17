@@ -43,19 +43,7 @@ and every metric; Blender reproduces them (measured agreement on the smoke test:
 
 ## What came from where
 
-| Source practice | Here |
-| --- | --- |
-| `pipeline.py` stage records, hashed evidence, owner vs self-audit decisions | runner, run records, `approvals.json`, review policies |
-| `shared_lock.py` (single GPU queue) | `forge lock` + automatic `gpu`/`unity-batch` locks; never steals a live lease |
-| `inspect_character_mesh.py` (normalize, Y-up detection, neutral renders) | `blender/preflight.py` |
-| `audit_fitted_character.py` (finite/<=4/normalized weights, bind drift, A->T edge stretch >3x) | rig + pose-screen gates |
-| `rig_diagnostics.py` + `joint_stress.py` (13 controlled poses) | `meshkit/skinning.py` `STRESS_POSES` + `blender/pose_render.py` |
-| `export_humanoid_bind.py` (T-pose bind) / `check_rig_roundtrip.py` | `blender/rig_skin.py` T-pose bind + FBX re-import comparison |
-| `generate_*_motions.py` (Kimodo, offline, seeds, raw retention) | `kimodo/generate_motions.py` |
-| `retarget_z01_motions.py` (SOMA T-pose global rotations -> rig) | `meshkit/motion.py` `retarget` + `blender/export_motions.py` |
-| `ZombieGoreBaker.cs` (9 parts, >=50 % subtree triangles, gib + stump caps) | `unity/.../GoreBaker.cs` |
-| `ModularZombieAssets.cs` (own Humanoid Avatar, 20 regional hitboxes) | `unity/.../CharacterImporter.cs`, `HitboxBuilder.cs` |
-| Individuality re-audit (equal-height silhouettes vs neighbours) | preflight individuality gate |
-
-Not ported (yet): foot-contact IK and loop polishing from the production retargeter (a cheaper bone-capsule ground
-clamp is used), learned skin-only weights (SkinTokens/Puppeteer adapters), LOD generation, crowd/performance checks.
+Each gate encodes a failure that cost time in the production workflow: stage records with hashed evidence and owner
+approvals, a single GPU queue, mesh normalization and neutral renders before rigging, weight and bind-drift audits,
+controlled stress poses, a T-pose bind with an FBX round trip, offline seeded motion generation with retargeting,
+subtree-based gore baking, and a silhouette individuality re-audit against the roster.
